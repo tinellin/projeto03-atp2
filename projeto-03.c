@@ -178,6 +178,10 @@ void compareFrames(char *path, char *frame, ReferenceFrame ref)
     }
   }
 
+  free(frames);
+  free(auxResultStr);
+  free(auxStr);
+
   fputs(resultStr, result);
 }
 
@@ -203,6 +207,8 @@ char *parser(int ct)
     sprintf(parsed, "%d", ct);
     strcpy(str, parsed); // >= 100
   }
+
+  free(parsed);
 
   return str;
 }
